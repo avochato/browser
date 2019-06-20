@@ -154,4 +154,30 @@ class BrowserTest < Minitest::Test
     browser = Browser.new("Fancy new browser")
     refute browser.known?
   end
+
+  test "detects Avochato for Android" do
+    browser = Browser.new(Browser["AVOCHATO_ANDROID"])
+    assert_equal "Avochato for Android", browser.name
+    assert browser.platform.android?
+    assert_equal "1.2.3", browser.full_version
+    assert_equal "1", browser.version
+  end
+
+  test "detects Avochato for iOS" do
+    browser = Browser.new(Browser["AVOCHATO_IPAD"])
+    assert_equal "Avochato for iOS", browser.name
+    assert browser.platform.ios?
+    assert browser.device.tablet?
+    assert_equal "1.2.3", browser.full_version
+    assert_equal "1", browser.version
+  end
+
+  test "detects Avochato for iOS on iphone" do
+    browser = Browser.new(Browser["AVOCHATO_IPHONE"])
+    assert_equal "Avochato for iOS", browser.name
+    assert browser.platform.ios?
+    assert browser.device.mobile?
+    assert_equal "1.2.3", browser.full_version
+    assert_equal "1", browser.version
+  end
 end

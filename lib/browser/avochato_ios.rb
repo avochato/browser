@@ -12,8 +12,8 @@ module Browser
     end
 
     def full_version
-      ua[%r[Avochato for i(Phone|Pad)+/([\d.]+)], 1] ||
-        "0.0"
+      ua[%r[Avochato for i(Phone|Pad)\/([\d.]+)], 2] ||
+        "0.0.0"
     end
 
     def match?
