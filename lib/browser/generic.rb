@@ -12,7 +12,7 @@ module Browser
     end
 
     def name
-      "CHRIS" || infer_name || "Generic Browser"
+      infer_name || "Generic Browser"
     end
 
     def full_version
