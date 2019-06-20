@@ -11,6 +11,10 @@ module Browser
       "Avochato for Android"
     end
 
+    def version
+      full_version
+    end
+
     def full_version
       ua[%r[Avochato for Android\/([\d.]+)], 1] ||
         "0.0.0"
