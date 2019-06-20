@@ -18,6 +18,7 @@ require "browser/device/surface"
 require "browser/device/tv"
 require "browser/device/xbox_one"
 require "browser/device/xbox_360"
+require "browser/device/avochato_android"
 
 module Browser
   class Device
@@ -27,6 +28,7 @@ module Browser
     # Order is important.
     def self.matchers
       @matchers ||= [
+        AvochatoAndroid,
         XboxOne,
         Xbox360,
         Surface,
@@ -110,6 +112,10 @@ module Browser
       id == :psp
     end
 
+    def avochato_android?
+      id == :avochato_android
+    end
+
     def playstation_vita?
       id == :psvita
     end
@@ -187,6 +193,7 @@ module Browser
     # Regex taken from http://detectmobilebrowsers.com
     # rubocop:disable Metrics/LineLength
     def detect_mobile?
+      avochato_android? ||
       psp? ||
         /zunewp7/i.match(ua) ||
         /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.match(ua) ||

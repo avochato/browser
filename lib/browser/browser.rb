@@ -27,6 +27,10 @@ require "browser/electron"
 require "browser/facebook"
 require "browser/otter"
 
+# Custom Avochato App Browsers
+require "browser/avochato_ios"
+require "browser/avochato_android"
+
 require "browser/bot"
 require "browser/middleware"
 
@@ -45,6 +49,8 @@ module Browser
   # Order is important.
   def self.matchers
     @matchers ||= [
+      AvochatoIos,
+      AvochatoAndroid,
       Nokia,
       UCBrowser,
       PhantomJS,
@@ -62,7 +68,7 @@ module Browser
       Chrome,
       Safari,
       MicroMessenger,
-      Generic
+      Generic,
     ]
   end
 
