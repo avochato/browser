@@ -24,6 +24,11 @@ module Browser
                           .load_file(Browser.root.join("search_engines.yml"))
     end
 
+    def self.why?(ua)
+      downcased_ua = ua.downcase
+      bots.find {|key, _| downcased_ua.include?(key) }
+    end
+
     attr_reader :ua
 
     def initialize(ua)
@@ -41,24 +46,23 @@ module Browser
     def name
       return unless bot?
       return "Generic Bot" if bot_with_empty_ua?
+
       self.class.bots.find {|key, _| downcased_ua.include?(key) }.last
     end
 
-    private
-
-    def bot_with_empty_ua?
+    private def bot_with_empty_ua?
       self.class.detect_empty_ua? && ua.strip == ""
     end
 
-    def bot_exception?
+    private def bot_exception?
       self.class.bot_exceptions.any? {|key| downcased_ua.include?(key) }
     end
 
-    def detect_bot?
+    private def detect_bot?
       self.class.bots.any? {|key, _| downcased_ua.include?(key) }
     end
 
-    def downcased_ua
+    private def downcased_ua
       @downcased_ua ||= ua.downcase
     end
   end

@@ -26,6 +26,14 @@ require "browser/alipay"
 require "browser/electron"
 require "browser/facebook"
 require "browser/otter"
+require "browser/instagram"
+require "browser/yandex"
+require "browser/sputnik"
+require "browser/snapchat"
+
+# Custom Avochato App Browsers
+require "browser/avochato_ios"
+require "browser/avochato_android"
 
 # Custom Avochato App Browsers
 require "browser/avochato_ios"
@@ -39,7 +47,7 @@ require "browser/device"
 require "browser/meta"
 
 module Browser
-  EMPTY_STRING = "".freeze
+  EMPTY_STRING = ""
 
   def self.root
     @root ||= Pathname.new(File.expand_path("../..", __dir__))
@@ -61,10 +69,14 @@ module Browser
       Firefox,
       Otter,
       Facebook,             # must be placed before Chrome and Safari
+      Instagram,            # must be placed before Chrome and Safari
+      Snapchat,             # must be placed before Chrome and Safari
       Weibo,                # must be placed before Chrome and Safari
       QQ,                   # must be placed before Chrome and Safari
       Alipay,               # must be placed before Chrome and Safari
       Electron,             # must be placed before Chrome and Safari
+      Yandex,               # must be placed before Chrome and Safari
+      Sputnik,              # must be placed before Chrome and Safari
       Chrome,
       Safari,
       MicroMessenger,

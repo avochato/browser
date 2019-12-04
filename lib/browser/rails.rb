@@ -10,9 +10,11 @@ module Browser
 
     initializer "browser" do
       ActiveSupport.on_load(:action_controller) do
-        ::ActionController::Base.send :include, Browser::ActionController
-        Browser::Middleware::Context.send(
-          :include,
+        ::ActionController::Base.include(Browser::ActionController)
+
+        ::ActionController::Metal.include(Browser::ActionController) if defined?(::ActionController::Metal) # rubocop:disable Metrics/LineLength
+
+        Browser::Middleware::Context.include(
           Browser::Middleware::Context::Additions
         )
       end

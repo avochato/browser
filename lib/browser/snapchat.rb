@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 module Browser
-  class Opera < Base
+  class Snapchat < Base
     def id
-      :opera
+      :snapchat
     end
 
     def name
-      "Opera"
+      "Snapchat"
     end
 
     def full_version
-      ua[%r{OPR/([\d.]+)}, 1] || ua[%r{Version/([\d.]+)}, 1] || "0.0"
+      ua[%r{Snapchat( ?|/)([\d.]+)}, 2] || "0.0"
     end
 
     def match?
-      ua =~ %r{(Opera|OPR/)}
+      ua =~ /Snapchat/
     end
   end
 end

@@ -52,7 +52,7 @@ module Browser
 
     # Return true if browser is modern (Webkit, Firefox 17+, IE9+, Opera 12+).
     def modern?
-      Browser.modern_rules.any? {|rule| rule === self } # rubocop:disable Metrics/LineLength, Style/CaseEquality
+      Browser.modern_rules.any? {|rule| rule === self } # rubocop:disable Style/CaseEquality
     end
 
     # Detect if browser is Microsoft Internet Explorer.
@@ -78,6 +78,18 @@ module Browser
       "0"
     end
 
+    # Detect if browser is Instagram.
+    def instagram?(expected_version = nil)
+      Instagram.new(ua).match? &&
+        detect_version?(full_version, expected_version)
+    end
+
+    # Detect if browser is Snapchat.
+    def snapchat?(expected_version = nil)
+      Snapchat.new(ua).match? &&
+        detect_version?(full_version, expected_version)
+    end
+
     # Detect if browser if Facebook.
     def facebook?(expected_version = nil)
       Facebook.new(ua).match? &&
@@ -93,7 +105,7 @@ module Browser
     # Detect if browser is WebKit-based.
     def webkit?(expected_version = nil)
       ua =~ /AppleWebKit/i &&
-        !edge? &&
+        (!edge? || Edge.new(ua).chrome_based?) &&
         detect_version?(webkit_full_version, expected_version)
     end
 
@@ -137,10 +149,16 @@ module Browser
       Opera.new(ua).match? && detect_version?(full_version, expected_version)
     end
 
+    # Detect if browser is Sputnik.
+    def sputnik?(expected_version = nil)
+      Sputnik.new(ua) && detect_version?(full_version, expected_version)
+    end
+
     # Detect if browser is Yandex.
     def yandex?(expected_version = nil)
-      ua =~ /YaBrowser/ && detect_version?(full_version, expected_version)
+      Yandex.new(ua) && detect_version?(full_version, expected_version)
     end
+    alias_method :yandex_browser?, :yandex?
 
     # Detect if browser is UCBrowser.
     def uc_browser?(expected_version = nil)
@@ -175,7 +193,7 @@ module Browser
     end
 
     def webkit_full_version
-      ua[%r[AppleWebKit/([\d.]+)], 1] || "0.0"
+      ua[%r{AppleWebKit/([\d.]+)}, 1] || "0.0"
     end
 
     def known?

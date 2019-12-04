@@ -1,10 +1,61 @@
 # Changelog
 
-## UNRELEASED
+## Unreleased
+
+## 2.7.1
+
+- Handle Snapchat user agents that have a space or an empty string instead of a slash before the version.
+- Fix iOS 10+ version detection.
+- Add fallback versions for instagram and snapchat to avoid NoMethodErrors on unexpected user agents.
+
+## 2.7.0
+
+- Add more Slack bots.
+- Handle instagram user agents that have a slash instead of a space.
+- Add `Browser::Bot.why?(ua)` to help debugging why a user agent is considered bot.
+- Promote Snapchat to a browser (it was detected as a bot previously).
+- Detect Edge based on Chrome correctly.
+- Improve Yandex detection.
+- Add Sputnik (https://browser.sputnik.ru)
+- Detect Android devices.
+- Add ScoutURLMonitor to the bot list.
+
+## 2.6.1
+
+- Also include controller extensions to `ActionController::Base`.
+
+## 2.6.0
 
 - Add GarlikCrawler, ImplisenseBot and WikiDo bots.
 - Add Mastodon URL expander bot.
 - Add eZ Publish Link Validator, GermCrawler, Pu_iN Crawler, ZoomBot, and ZoominfoBot bots.
+- Add Datanyze bot.
+- Add support for Instagram in-app browser.
+- Add Updown.io monitor bot.
+- Add Snapshat detection.
+- Add Instagram detection.
+- Add Nintendo Switch detection.
+- Add WooRank bot.
+- Add Trendsmap bot.
+- Add Go 1.1 package http bot.
+- Add MauiBot.
+- Add SiteCheck-sitecrawl bot.
+- Add PR-CY.RU bot.
+- Add AdsTxtCrawler bot.
+- Add HTTrack bot.
+- Add Google Shopping bot.
+- Add DataFeedWatch bot.
+- Add Zabbix bot.
+- Add TangibleeBot.
+- Add Jooble bot.
+- Add Fyre bot.
+- Drop Rails 4 official support.
+- Fix accept-language sorting (If HTTP-header has value `en,fr`—without qualities—the first language should be `en` instead of `fr`).
+- Ignore malformed strings when comparing versions.
+- Fix Facebook detection on newer apps.
+- Change precedence for bot detection when common libs are used.
+- Add Yandex's search browser to the exception list.
+
 
 ## v2.5.3
 

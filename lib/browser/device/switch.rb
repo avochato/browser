@@ -2,17 +2,17 @@
 
 module Browser
   class Device
-    class TV < Base
+    class Switch < Base
       def id
-        :tv
+        :switch
       end
 
       def name
-        "TV"
+        "Nintendo Switch"
       end
 
       def match?
-        ua =~ /(\btv|Android.*?ADT-1|Nexus Player)/i
+        ua =~ /Nintendo Switch/i
       end
     end
   end

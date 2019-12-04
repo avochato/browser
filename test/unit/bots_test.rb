@@ -107,4 +107,18 @@ class BotsTest < Minitest::Test
 
     Browser::Bot.bots.delete("faraday")
   end
+
+  test "detects recognized bots using common libs" do
+    browser = Browser.new(Browser.bot_user_agents["LINKEDIN"])
+
+    assert browser.bot?
+    assert_equal "LinkedIn", browser.bot.name
+  end
+
+  test "tells why user agent is considered a bot" do
+    id, name = Browser::Bot.why?(Browser.bot_user_agents["LINKEDIN"])
+
+    assert_equal "linkedinbot", id
+    assert_equal "LinkedIn", name
+  end
 end

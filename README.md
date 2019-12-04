@@ -49,13 +49,16 @@ browser.version         # major version number
 browser.webkit?
 browser.webkit_full_version
 browser.yandex?
-browser.wechat?         # detect the MicroMessenger(WeChat)
-browser.weibo?          # detect Weibo embedded browser (Sina Weibo)
+browser.wechat?
+browser.weibo?
+browser.yandex?
+browser.sputnik?
 
 # Get bot info
 browser.bot.name
 browser.bot.search_engine?
 browser.bot?
+Browser::Bot.why?(ua) # shows which user agent was the offender
 
 # Get device info
 browser.device
@@ -81,6 +84,7 @@ browser.device.tv?
 browser.device.vita?
 browser.device.wii?
 browser.device.wiiu?
+browser.device.switch?
 browser.device.xbox?
 browser.device.xbox_360?
 browser.device.xbox_one?
@@ -244,7 +248,7 @@ This behavior changed in `v1.0.0`; previously there wasn't a way of getting the 
 
 ### Safari
 
-iOS webviews and web apps aren't detect as Safari anymore, so be aware of that if that's your case. You can use a combination of platform and webkit detection to do whatever you want.
+iOS webviews and web apps aren't detected as Safari anymore, so be aware of that if that's your case. You can use a combination of platform and webkit detection to do whatever you want.
 
 ```ruby
 # iPad's Safari running as web app mode.

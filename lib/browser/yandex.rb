@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 module Browser
-  class Opera < Base
+  class Yandex < Base
     def id
-      :opera
+      :yandex
     end
 
     def name
-      "Opera"
+      "Yandex"
     end
 
     def full_version
-      ua[%r{OPR/([\d.]+)}, 1] || ua[%r{Version/([\d.]+)}, 1] || "0.0"
+      ua[%r{YaBrowser/([\d.]+)}, 1] || "0.0"
     end
 
     def match?
-      ua =~ %r{(Opera|OPR/)}
+      ua =~ /YaBrowser/
     end
   end
 end

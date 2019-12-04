@@ -11,14 +11,14 @@ module Browser
     end
 
     def full_version
-      ua[%r[Version/([\d.]+)], 1] ||
-        ua[%r[Safari/([\d.]+)], 1] ||
-        ua[%r[AppleWebKit/([\d.]+)], 1] ||
+      ua[%r{Version/([\d.]+)}, 1] ||
+        ua[%r{Safari/([\d.]+)}, 1] ||
+        ua[%r{AppleWebKit/([\d.]+)}, 1] ||
         "0.0"
     end
 
     def match?
-      ua =~ /Safari/ && ua !~ /Chrome|CriOS|PhantomJS|FxiOS/
+      ua =~ /Safari/ && ua !~ /Chrome|CriOS|PhantomJS|FxiOS|YaBrowser/
     end
   end
 end
