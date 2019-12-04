@@ -21,6 +21,9 @@ ANDROID_OREO: Mozilla/5.0 (Linux; Android 8.0.0; Pixel Build/OPR6.170623.012) Ap
 ANDROID_TV: Mozilla/5.0 (Linux; Android 5.0; ADT-1 Build/LRW87K) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36
 ANDROID_WEBVIEW: Mozilla/5.0 (Linux; Android 5.1.1; Nexus 5 Build/LMY48B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36
 ANDROID_WITH_SAFARI: "Mozilla/5.0 (Linux; U; Android 4.3; en-us; SCH-I535 Build/JSS15J) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+AVOCHATO_IPHONE: 'Avochato for iPhone/1.2.3(+https://www.avochato.com)'
+AVOCHATO_IPAD: 'Avochato for iPad/1.2.3(+https://www.avochato.com)'
+AVOCHATO_ANDROID: 'Avochato for Android/1.2.3(+https://www.avochato.com)'
 BLACKBERRY10: "Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.1675 Mobile Safari/537.10+"
 BLACKBERRY4: "BlackBerry8100/4.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/103"
 BLACKBERRY5: "BlackBerry9000/5.0.0.93 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/179"
@@ -30,9 +33,6 @@ BLACKBERRY: "BlackBerry7100i/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Vendo
 CHROME: "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.99 Safari/533.4"
 CHROME_OS: "Mozilla/5.0 (X11; CrOS x86_64 3701.81.0) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.57 Safari/537.31."
 COREMEDIA: "Apple Mac OS X v10.6.4 CoreMedia v1.0.0.10F569"
-AVOCHATO_IPHONE: 'Avochato for iPhone/1.2.3(+https://www.avochato.com)'
-AVOCHATO_IPAD: 'Avochato for iPad/1.2.3(+https://www.avochato.com)'
-AVOCHATO_ANDROID: 'Avochato for Android/1.2.3(+https://www.avochato.com)'
 CUSTOM_APP: "Our App 0.0.1 (Linux; Android 4.0.3; HTC Ruby Build/IML74K; en_CA)"
 ELECTRON: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Electron/1.4.12 Safari/537.36"
 FACEBOOK: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 [FBAN/FBIOS;FBAV/135.0.0.45.90;FBBV/66877072;FBDV/iPhone9,3;FBMD/iPhone;FBSN/iOS;FBSV/10.3.3;FBSS/2;FBCR/AT&T;FBID/phone;FBLC/en_US;FBOP/5;FBRV/0]

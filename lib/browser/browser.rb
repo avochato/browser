@@ -35,6 +35,10 @@ require "browser/snapchat"
 require "browser/avochato_ios"
 require "browser/avochato_android"
 
+# Custom Avochato App Browsers
+require "browser/avochato_ios"
+require "browser/avochato_android"
+
 require "browser/bot"
 require "browser/middleware"
 
